@@ -2,6 +2,7 @@
 
 ## Startup Sequence
 
+```mermaid
 sequenceDiagram
 System->>game_home_page: user press game icon
 game_home_page->>game_setup_page: user press play button
@@ -27,6 +28,11 @@ alt selected YES
         game_popup_page->>game_home_page:selected no
 end
 game_home_page-->>System: user press exit button
+```
+
+_Diagram not visible? Use the
+[Mermaid live viewer](https://mermaid-js.github.io/mermaid-live-editor)
+or use a [VScode plug-in](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid)_
 
 ## Movement Initiation
 
