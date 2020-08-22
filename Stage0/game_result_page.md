@@ -12,4 +12,4 @@ Display score of gameplay
   When 10 seconds completed after result page loaded successfully
 
   Then module gives control to game_popup_page module by passing
-  message to be displyed in popup
+  message to be displayed in popup
