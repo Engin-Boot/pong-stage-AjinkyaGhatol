@@ -43,7 +43,7 @@ Display game setup page and controls feature on setup page
 
 ### Scenario: user selected two for number of players and entered all
 
-### details in setup page
+### details in setup page for two players
 
   Given setup page is active and game is working and user entered all
   details in setup page
