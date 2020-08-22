@@ -32,6 +32,7 @@ game_home_page-->>System: user press exit button
 
 _Diagram not visible? Use the
 [Mermaid live viewer](https://mermaid-js.github.io/mermaid-live-editor)
+or use a [VScode plug-in](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid)_
 
 ## Movement Initiation
 
