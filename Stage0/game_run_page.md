@@ -1,6 +1,6 @@
 # Feature
 
-Controls movement of ball and slider according to user inpu
+Controls movement of ball and slider according to user input
 Counts result or score of gameplay
 
 ## Acceptance Criteria
