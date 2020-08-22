@@ -1,7 +1,7 @@
 
-## Feature
+# Feature
 
-this is device or system of user
+This is device or system of user
 
 ## Acceptance Criteria
 
