@@ -1,8 +1,33 @@
-# The Essentials
+# Startup Sequence
 
-1. Breakdown the problem into modules. Name each module
-1. Rename the 'give-me-a-name...' files to reflect the module names.
-Create more files for more modules.
-Fill the responsibility and acceptance-criteria in each module.
-1. Fill the sequence-start file with the details of module-interactions,
-as indicated in that file.
+```mermaid
+sequenceDiagram
+System->>game_home_page: user press game icon
+game_home_page->>game_setup_page: user press play button
+game_setup_page->>game_setup_page:choose number of players
+alt selected one
+        game_setup_page->>game_setup_page:user vs bot
+        game_setup_page->>game_setup_page:enter player name
+        game_setup_page->>game_setup_page:choose difficulty
+        game_setup_page->>game_run_page:press start game
+    else selected two
+        game_setup_page->>game_setup_page:player1 vs player2
+        game_setup_page->>game_setup_page:enter player1 name
+        game_setup_page->>game_setup_page:enter player2 name
+        game_setup_page->>game_run_page:press start game
+end
+game_run_page->>game_run_page:user playing game
+game_run_page->>game_result_page:game over
+game_result_page->>game_popup_page:after 10 seconds timeout
+game_popup_page->>game_popup_page:display do you want to play again?
+alt selected YES
+        game_popup_page->>game_setup_page:selected yes
+    else selected NO
+        game_popup_page->>game_home_page:selected no
+end
+game_home_page-->>System: user press exit button
+```
+
+_Diagram not visible? Use the
+[Mermaid live viewer](https://mermaid-js.github.io/mermaid-live-editor)
+or use a [VScode plug-in](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid)_
