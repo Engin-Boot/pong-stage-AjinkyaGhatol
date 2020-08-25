@@ -13,13 +13,13 @@ Counts result or score of gameplay
 
   Then module gives control to game_result_page module
   
-# Sequence Flow
+## Sequence Flow
 
 ```mermaid
 sequenceDiagram
   game_setup_page->>run_page_controller: user press start game
   run_page_controller->>layout_updater:start thread1
-  run_page_controller->>ball_plus_score_counter:start thread2
+  run_page_controller->>ball_plus_score:start thread2
   run_page_controller->>slider_coordinates_updater:start thread3
   layout_updater->>layout_updater: display layout in user interface
 
@@ -34,15 +34,15 @@ sequenceDiagram
     end
   and count score and upate ball position
     loop every 10ms
-ball_plus_score_counter-->>ball_plus_score_counter:upadte ball coordinates and count score
-    end 
+ball_plus_score-->>ball_plus_score:upadte ball coordinates and count score
+    end
   end
-ball_plus_score_counter-->>run_page_controller:game over(one of player reach score of 10)
+ball_plus_score->>run_page_controller:game over(one of player reach score of 10)
   run_page_controller->>layout_updater:end thread1
-  run_page_controller->>ball_plus_score_counter:end thread2
+  run_page_controller->>ball_plus_score:end thread2
   run_page_controller->>slider_coordinates_updater:end thread3
   run_page_controller->>game_result_page:show result
-					
+
 ```
 
 _Diagram not visible? Use the
