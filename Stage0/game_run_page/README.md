@@ -18,19 +18,33 @@ sequenceDiagram
 # Sequence Flow
 
 ```mermaid
-game_setup_page->>layout_updater: user press start game
-layout_updater->>layout_updater: display layout in user interface
-layout_updater->>ball_coordinates_updater_plus_score_counter: start
-ball_coordinates_updater_plus_score_counter->>slider_coordinates_updater: start
+sequenceDiagram
+  game_setup_page->>run_page_controller: user press start game
+  run_page_controller->>layout_updater:start thread1
+  run_page_controller->>ball_coordinates_updater_plus_score_counter:start thread2
+  run_page_controller->>slider_coordinates_updater:start thread3
+  layout_updater->>layout_updater: display layout in user interface
+
   
-par layout_updater
-layout_updater->>layout_updater: display layout in user interface
-and slider cordinates
-slider_coordinates_updater->>slider_coordinates_updater:update slider coordinates
-and count score and upate ball position
-ball_coordinates_updater_plus_score_counter->>ball_coordinates_updater_plus_score_counter:upadte ball coordinates and count score
-end
-ball_coordinates_updater_plus_score_counter->>game_result_page:game over
+  par layout update
+    loop every fps
+    layout_updater-->>layout_updater: display layout in user interface
+    end
+  and update slider coordinates
+    loop every 10ms
+    slider_coordinates_updater-->>slider_coordinates_updater:update slider coordinates
+    end
+  and count score and upate ball position
+    loop every 10ms
+    ball_coordinates_updater_plus_score_counter-->>ball_coordinates_updater_plus_score_counter:upadte ball coordinates and count score
+    end 
+  end
+  ball_coordinates_updater_plus_score_counter-->>run_page_controller:game over(one of player reach score of 10)
+  run_page_controller->>layout_updater:end thread1
+  run_page_controller->>ball_coordinates_updater_plus_score_counter:end thread2
+  run_page_controller->>slider_coordinates_updater:end thread3
+  run_page_controller->>game_result_page:show result
+					
 ```
 
 _Diagram not visible? Use the
