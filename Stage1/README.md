@@ -6,7 +6,7 @@ Your game is trending! The installations are encouraging!
 
 option is in home page module
 
-# Startup Sequence
+## Startup Sequence
 
 ```mermaid
 sequenceDiagram
