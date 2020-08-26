@@ -48,3 +48,4 @@ or use a [VScode plug-in](https://marketplace.visualstudio.com/items?itemName=bi
   When Game is completed
 
   Then module gives control to game_result_page module
+  
