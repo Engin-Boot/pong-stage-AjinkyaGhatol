@@ -27,7 +27,8 @@ then transfer control to settings module
 
 given game is working
 when user press play icon
-then transfer control to game_setup_page module and also transfer user details like in app purchase details to game_setup_page module
+then transfer control to game_setup_page module and also transfer user details
+like in app purchase details to game_setup_page module
 
 ### Scenario: user press exit
 

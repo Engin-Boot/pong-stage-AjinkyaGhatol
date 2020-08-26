@@ -20,10 +20,10 @@ system->>home_page_controller:user start game
   settings->>graphic_settings:user press on graphics
   graphic_settings-->>settings:done changes
   settings->>sound_settings:user press on sound icon
-  sound_settings-->>settings:done changes	
+  sound_settings-->>settings:done changes
   settings-->>home_page_controller:user press back button
-  home_page_controller->>game_setup_page:user press play buuon - transfer user in app purchase details 
-  home_page_controller-->>system:user press exit				
+  home_page_controller->>game_setup_page:user press play button
+  home_page_controller-->>system:user press exit
 
 ```
 
@@ -48,3 +48,4 @@ or use a [VScode plug-in](https://marketplace.visualstudio.com/items?itemName=bi
   When user press exit button
 
   Then module gives control to system module
+  
