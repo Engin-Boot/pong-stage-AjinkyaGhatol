@@ -9,7 +9,7 @@ It loads layout file in display
 
 given game is working and system has internet access
 when user starts game and user has not login
-Then transfer control to login/signup module
+Then transfer control to login_signup module
 
 ### Scenario: user press in app purchase icon
 
