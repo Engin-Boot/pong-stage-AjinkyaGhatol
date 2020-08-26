@@ -15,7 +15,7 @@ Then transfer control to login/signup module
 
 given game is working and system has internet access
 when user press in app purchase icon
-then transfer control to in_app_pirchase module
+then transfer control to in_app_purchase module
 
 ### Scenario: user press settings icon
 
